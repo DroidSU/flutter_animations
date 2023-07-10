@@ -64,7 +64,6 @@ class _ContainerAnimationsState extends State<ContainerAnimations> {
                   elevation: 10,
                   borderRadius: BorderRadius.circular(20),
                   child: AnimatedContainer(
-                    transform: ,
                     duration: const Duration(seconds: 2),
                     curve: Curves.easeInBack,
                     height: height,

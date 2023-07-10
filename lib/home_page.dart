@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations/container_animations_page.dart';
+import 'package:flutter_animations/drag_and_drop.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,23 +14,22 @@ class HomePage extends StatelessWidget {
           width: MediaQuery.sizeOf(context).width,
           padding: const EdgeInsets.all(10),
           child: Center(
-            child: ListView.builder(
-                itemBuilder: (context, index) {
-                  return ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context) {
-                          return const ContainerAnimations();
-                        }));
-                      },
-                      child: const Text(
-                        'Animated Container',
-                        style: TextStyle(color: Colors.black, fontSize: 18),
-                      ));
-                },
-                itemCount: 1,
-                padding: const EdgeInsets.all(8),
+            child: ListView(
               shrinkWrap: true,
+              padding: const EdgeInsets.all(10),
+              children: [
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return const DragAndDropExample();
+                      }));
+                    },
+                    child: const Text(
+                      'Animated Container',
+                      style: TextStyle(color: Colors.black, fontSize: 18),
+                    )),
+              ],
             ),
           ),
         ),
